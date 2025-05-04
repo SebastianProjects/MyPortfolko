@@ -32,7 +32,7 @@ const projects = [
       en: "The application enables efficient insertion, searching, and deletion of geographical areas. A custom KD-tree structure with support for duplicate coordinates was implemented in Python to ensure optimal performance. The application also includes map-based visualization of searched areas.",
       sk: "Aplikácia umožňuje efektívne vkladanie, vyhľadávanie a mazanie geografických oblastí. Pre zabezpečenie výkonu bol v jazyku Python implementovaný vlastný KD-strom s podporou duplicít. Súčasťou aplikácie je aj zobrazovanie vyhľadávaných oblastí prostredníctvom mapy."
     },
-    image: "/images/kdtree-geo.png"
+    image: "/images/geoapp.png"
   },
   {
     title: {
@@ -43,29 +43,29 @@ const projects = [
       en: "This application, implemented in Python, enables the registration and management of vehicles and their owners using a custom-built database system. It implements a heap file and an extendible hash file structure for efficient data storage and retrieval. A graphical user interface (GUI) is also included, allowing users to perform operations such as inserting, updating, deleting, and searching records in an intuitive and user-friendly manner.",
       sk: "Táto aplikácia, implementovaná v Pythone, umožňuje registráciu a správu vozidiel a ich majiteľov s využitím vlastného implementovaného databázového systému. Využíva dátové štruktúry typu heap file a extendible hash file na efektívne ukladanie a vyhľadávanie údajov. Súčasťou je aj grafické používateľské rozhranie (GUI), ktoré umožňuje používateľom vykonávať operácie ako vkladanie, úpravu, mazanie či vyhľadávanie záznamov pohodlným a intuitívnym spôsobom."
     },
-    image: "/images/dsa-vehicle.png"
+    image: "/images/hf.png"
   },
   {
     title: {
-      en: "Web registration and login system",
+      en: "Web Registration and Login System",
       sk: "Web registračný a logovací systém"
     },
     description: {
-      en: "Inspired by Dave Gray.",
-      sk: "Inšpirácia od Dave Gray."
+      en: "A backend-oriented project where I implement my own registration and login system using JWT. The system sends the JWT in the form of cookies and verifies the user with another token to prevent misuse of the token over an extended period. The project is built with Node.js, React.js, and MongoDB.",
+      sk: "Backendovo zameraný projekt, v ktorom implementujem vlastný systém prihlasovania a registrovania pomocou JWT. Systém posiela JWT vo forme cookies a overuje používateľa pomocou ďalšieho tokenu, čo zabráni zneužitiu tokenu na dlhší čas. Projekt je postavený na Node.js, React.js a MongoDB."
     },
     image: null
   },
   {
     title: {
-      en: "WhatsOn",
-      sk: "WhatsOn"
+      en: "SHARE web app",
+      sk: "SHARE webová aplikácia"
     },
     description: {
       en: "I developed a fullstack web application using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics. The application features a registration and login system with JWT-based authentication. Sequelize is used for database interaction, and bcrypt is implemented for secure password hashing.",
-      sk: "I developed a fullstack web application using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics. The application features a registration and login system with JWT-based authentication. Sequelize is used for database interaction, and bcrypt is implemented for secure password hashing."
+      sk: "Vyvinul som fullstack webovú aplikáciu pomocou React, Express a Oracle SQL databázy, ktorá umožňuje používateľom pridávať, komentovať, lajknúť, filtrovať príspevky a zobrazovať štatistiky. Aplikácia obsahuje systém registrácie a prihlasovania s autentifikáciou založenou na JWT. Na interakciu s databázou sa používa Sequelize a bcrypt, ktorý zabezpečuje hashovanie hesiel."
     },
-    image: "/images/whatson.png"
+    image: "/images/share.png"
   },
   {
     title: {
@@ -73,10 +73,10 @@ const projects = [
       sk: "Weblience"
     },
     description: {
-      en: "",
-      sk: ""
+      en: "Together with my friends, we developed a simple web in React.js that represents a company for creating interactive websites.",
+      sk: "S mojimi kamarátmi sme vyvinuli jednoduchý web v React.js, ktorý reprezentuje firmu pre tvorbu interaktívnych stránok."
     },
-    image: null
+    image: "images/weblience.png"
   },
   {
     title: {
@@ -84,10 +84,10 @@ const projects = [
       sk: "Aplikácia pre generovanie a spracovanie produktov"
     },
     description: {
-      en: "",
-      sk: ""
+      en: "An application I developed for WooCommerce products in Python using threads. The application can load products along with generating information about the products using AI. The user can generate information about the products, locally modify it, and gradually upload the products back to WooCommerce.",
+      sk: "Aplikácia, ktorú som vyvinul pre WooCommerce produkty v prostredí Python s použitím vlákien. Aplikácia dokáže načítať produkty spolu s generovaním informácií o produktoch pomocou AI. Používateľ môže generovať informácie o produktoch, lokálne ich upravovať a postupne nahrávať produkty späť na WooCommerce."
     },
-    image: null
+    image: "images/AIGenProduct.png"
   },
   {
     title: {
@@ -103,13 +103,13 @@ const projects = [
   {
     title: {
       en: "Basic metronome for guitar playing",
-      sk: "Základný metronóm pre hranie na gitare"
+      sk: "Jednoduchý metronóm pre hranie na gitare"
     },
     description: {
       en: "I developed a simple metronome application using the Tkinter library in Python. This tool helps me maintain tempo and play with a consistent rhythm while practicing guitar. The application features an intuitive interface that allows interaction via keyboard keys for easy control. Additionally, I used threading techniques to ensure smooth and precise timing.",
       sk: "Vyvinul som jednoduchú aplikáciu metronómu pomocou knižnice Tkinter v Pythone. Tento nástroj mi pomáha udržiavať tempo a hrať s konzistentným rytmom pri cvičení na gitare. Aplikácia obsahuje intuitívne rozhranie, ktoré umožňuje interakciu cez klávesy klávesnice pre jednoduché ovládanie. Okrem toho som použil techniky vláken, aby som zabezpečil plynulé a presné načasovanie."
     },
-    image: null
+    image: "images/metronome-picture.png"
   }
 ];
 
