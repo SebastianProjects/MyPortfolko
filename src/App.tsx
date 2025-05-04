@@ -14,15 +14,15 @@ const projects = [
   },
   {
     title: {
-      en: "Application for optimizing placement of unmanned monitoring systems",
-      sk: "Aplikácia pre optimizáciu umiestnenia bezpilotných monitorovacích systémov"
+      en: "Application for optimalization placement of unmanned monitoring systems",
+      sk: "Aplikácia na optimalizáciu umiestnenia bezpilotných monitorovacích systémov"
     },
     description: {
       en: "As part of my bachelor thesis project, I developed an application that allows users to define an area on a map using OpenStreetMap, enabling exploration of different regions. Users can perform calculations for the placement of UAV devices and create schedules based on these placement calculations. The application is programmed in Python, utilizing the Tkinter library for the graphical interface, along with the TkinterMapView library and the Geocoder library. It employs programming techniques such as inheritance, polymorphism, and threading, and uses discrete simulation for generating schedules.",
-      sk: "As part of my bachelor thesis project, I developed an application that allows users to define an area on a map using OpenStreetMap, enabling exploration of different regions. Users can perform calculations for the placement of UAV devices and create schedules based on these placement calculations. The application is programmed in Python, utilizing the Tkinter library for the graphical interface, along with the TkinterMapView library and the Geocoder library. It employs programming techniques such as inheritance, polymorphism, and threading, and uses discrete simulation for generating schedules."
+      sk: "V rámci mojej bakalárskej práce som vyvinul aplikáciu, ktorá umožňuje používateľom definovať oblasť na mape pomocou OpenStreetMap, čím umožňuje prieskum rôznych regiónov. Používatelia môžu vykonávať výpočty pre umiestnenie UAV zariadení a vytvárať rozvrhy na základe týchto výpočtov. Aplikácia je naprogramovaná v Pythone, využívajúca knižnicu Tkinter pre grafické rozhranie, spolu s knižnicou TkinterMapView a knižnicou Geocoder. Používa programovacie techniky ako dedičnosť, polymorfizmus a multithreading a využíva diskrétnu simuláciu na generovanie rozvrhov."
     },
     image: "/images/uav-picture.png"
-  },
+  },  
   {
     title: {
       en: "Application for managing geographical areas with implementation of KD-tree",
