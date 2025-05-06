@@ -22,7 +22,7 @@ const projects = [
       sk: "V rámci mojej bakalárskej práce som vyvinul aplikáciu, ktorá umožňuje používateľom definovať oblasť na mape pomocou OpenStreetMap, čím umožňuje prieskum rôznych regiónov. Používatelia môžu vykonávať výpočty pre umiestnenie UAV zariadení a vytvárať rozvrhy na základe týchto výpočtov. Aplikácia je naprogramovaná v Pythone, využívajúca knižnicu Tkinter pre grafické rozhranie, spolu s knižnicou TkinterMapView a knižnicou Geocoder. Používa programovacie techniky ako dedičnosť, polymorfizmus a multithreading a využíva diskrétnu simuláciu na generovanie rozvrhov."
     },
     image: "/images/uav-picture.png"
-  },  
+  },
   {
     title: {
       en: "Application for managing geographical areas with implementation of KD-tree",
@@ -336,14 +336,18 @@ export default function Portfolio() {
         <h3 className="text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'Projects' : 'Projekty'}</h3>
         <div className="bg-white rounded-xl shadow p-4 w-full flex-1 flex flex-col">
           <div className="flex-grow">
-            <h4 className="text-lg font-semibold">{projects[projectIndex].title[lang]}</h4>
-            <p className="mt-1">{projects[projectIndex].description[lang]}</p>
-            {projects[projectIndex].image && (
-              <img
-                src={projects[projectIndex].image ?? undefined}
-                alt={projects[projectIndex].title[lang]}
-                className="rounded max-h-[50vh] w-auto mx-auto object-contain mt-4"
-              />
+            <h4 className="text-lg font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
+            {projects[projectIndex].image ? (
+              <div className="flex flex-row gap-[1%]">
+                <p className="w-[50%] text-base leading-relaxed text-justif">{projects[projectIndex].description[lang]}</p>
+                <img
+                  src={projects[projectIndex].image ?? undefined}
+                  alt={projects[projectIndex].title[lang]}
+                  className="rounded w-[50%] object-contain mx-auto justify-self-center align-self-center"
+                />
+              </div>
+            ) : (
+              <p className="mt-1 text-base leading-relaxed text-justify">{projects[projectIndex].description[lang]}</p>
             )}
           </div>
           <div className="flex justify-between mt-4 items-center">
