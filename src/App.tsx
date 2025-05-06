@@ -275,25 +275,25 @@ export default function Portfolio() {
         <nav className="flex gap-4 text-base font-semibold">
           <a
             href="#intro"
-            className="hover:scale-105 transition-transform"
+            className="font-bold hover:scale-105 transition-transform"
           >
             {lang === 'en' ? 'Intro' : 'Úvod'}
           </a>
           <a
             href="#about"
-            className="hover:scale-105 transition-transform"
+            className="font-bold hover:scale-105 transition-transform"
           >
             {lang === 'en' ? 'About' : 'O mne'}
           </a>
           <a
             href="#projects"
-            className="hover:scale-105 transition-transform"
+            className="font-bold hover:scale-105 transition-transform"
           >
             {lang === 'en' ? 'Projects' : 'Projekty'}
           </a>
           <a
             href="#tech"
-            className="hover:scale-105 transition-transform"
+            className="font-bold hover:scale-105 transition-transform"
           >
             {lang === 'en' ? 'Technologies' : 'Technológie'}
           </a>
@@ -358,7 +358,7 @@ export default function Portfolio() {
           <div className="flex justify-between mt-4 items-center">
             <button
               onClick={() => setProjectIndex((projectIndex - 1 + projects.length) % projects.length)}
-              className="text-blue-600 hover:scale-105 transition-transform"
+              className="font-bold text-blue-600 hover:scale-105 transition-transform text-bold"
             >
               {lang === 'en' ? 'Previous' : 'Predošlý'}
             </button>
@@ -369,7 +369,7 @@ export default function Portfolio() {
 
             <button
               onClick={() => setProjectIndex((projectIndex + 1) % projects.length)}
-              className="text-blue-600 hover:scale-105 transition-transform"
+              className="font-bold text-blue-600 hover:scale-105 transition-transform"
             >
               {lang === 'en' ? 'Next' : 'Ďalší'}
             </button>
@@ -400,7 +400,7 @@ export default function Portfolio() {
             href="https://www.facebook.com/profile.php?id=100008568406391"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
+            className="font-bold hover:scale-110 transition-transform"
           >
             <img src="/images/facebook-logo.png" alt="GitHub" className="w-6 h-6" />
           </a>
@@ -408,7 +408,7 @@ export default function Portfolio() {
             href="https://github.com/SebastianProjects"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
+            className="font-bold hover:scale-110 transition-transform"
           >
             <img src="/images/github-logo.png" alt="GitHub" className="w-6 h-6" />
           </a>
