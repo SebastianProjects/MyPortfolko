@@ -363,7 +363,7 @@ export default function Portfolio() {
               {lang === 'en' ? 'Previous' : 'Predošlý'}
             </button>
 
-            <span className="text-lg font-medium text-gray-700">
+            <span className="text-lg font-bold text-gray-700">
               {lang === 'en' ? `${projectIndex + 1} / ${projects.length}` : `${projectIndex + 1} / ${projects.length}`}
             </span>
 
