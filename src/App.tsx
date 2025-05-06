@@ -18,8 +18,8 @@ const projects = [
       sk: "Aplikácia na optimalizáciu umiestnenia bezpilotných monitorovacích systémov"
     },
     description: {
-      en: "As part of my bachelor thesis project, I developed an application that allows users to define an area on a map using OpenStreetMap, enabling exploration of different regions. Users can perform calculations for the placement of UAV devices and create schedules based on these placement calculations. The application is programmed in Python, utilizing the Tkinter library for the graphical interface, along with the TkinterMapView library and the Geocoder library. It employs programming techniques such as inheritance, polymorphism, and threading, and uses discrete simulation for generating schedules.",
-      sk: "V rámci mojej bakalárskej práce som vyvinul aplikáciu, ktorá umožňuje používateľom definovať oblasť na mape pomocou OpenStreetMap, čím umožňuje prieskum rôznych regiónov. Používatelia môžu vykonávať výpočty pre umiestnenie UAV zariadení a vytvárať rozvrhy na základe týchto výpočtov. Aplikácia je naprogramovaná v Pythone, využívajúca knižnicu Tkinter pre grafické rozhranie, spolu s knižnicou TkinterMapView a knižnicou Geocoder. Používa programovacie techniky ako dedičnosť, polymorfizmus a multithreading a využíva diskrétnu simuláciu na generovanie rozvrhov."
+      en: "As part of my bachelor thesis project, I developed an application that allows users to define an area on a map using OpenStreetMap, enabling exploration of different regions. Users can perform calculations for the placement of UAV devices and create schedules based on these placement calculations. The application is programmed in Python, utilizing the Tkinter library for the graphical interface, along with the TkinterMapView library and the Geocoder library. Within the implementation I employed programming techniques such as inheritance, polymorphism, threading and I used discrete simulation for generating schedules.",
+      sk: "V rámci mojej bakalárskej práce som vyvinul aplikáciu, ktorá umožňuje používateľom definovať oblasť na mape pomocou OpenStreetMap. Používatelia môžu vykonávať výpočty pre umiestnenie UAV zariadení a vytvárať časové rozvrhy na základe týchto výpočtov. Aplikácia je implementovaná v Pythone, s použitím knižnice Tkinter pre grafické rozhranie spolu s knižnicou TkinterMapView a knižnicou Geocoder. Pri implementácií som používal programovacie techniky ako dedičnosť, polymorfizmus a multithreading a využíval diskrétnu simuláciu na generovanie rozvrhov."
     },
     image: "/images/uav-picture.png"
   },
@@ -30,7 +30,7 @@ const projects = [
     },
     description: {
       en: "The application enables efficient insertion, searching, and deletion of geographical areas. A custom KD-tree structure with support for duplicate coordinates was implemented in Python to ensure optimal performance. The application also includes map-based visualization of searched areas.",
-      sk: "Aplikácia umožňuje efektívne vkladanie, vyhľadávanie a mazanie geografických oblastí. Pre zabezpečenie výkonu bol v jazyku Python implementovaný vlastný KD-strom s podporou duplicít. Súčasťou aplikácie je aj zobrazovanie vyhľadávaných oblastí prostredníctvom mapy."
+      sk: "Aplikácia umožňuje efektívne vkladanie, vyhľadávanie a mazanie geografických oblastí. Aplikácia je implementovaná v jazyku Python a pre optimalizáciu operácií je implementovaný vlastný KD-strom s podporou duplicít. Súčasťou aplikácie je aj zobrazovanie vyhľadávaných oblastí prostredníctvom mapy."
     },
     image: "/images/geoapp.png"
   },
@@ -41,7 +41,7 @@ const projects = [
     },
     description: {
       en: "This application, implemented in Python, enables the registration and management of vehicles and their owners using a custom-built database system. It implements a heap file and an extendible hash file structure for efficient data storage and retrieval. A graphical user interface (GUI) is also included, allowing users to perform operations such as inserting, updating, deleting, and searching records in an intuitive and user-friendly manner.",
-      sk: "Táto aplikácia, implementovaná v Pythone, umožňuje registráciu a správu vozidiel a ich majiteľov s využitím vlastného implementovaného databázového systému. Využíva dátové štruktúry typu heap file a extendible hash file na efektívne ukladanie a vyhľadávanie údajov. Súčasťou je aj grafické používateľské rozhranie (GUI), ktoré umožňuje používateľom vykonávať operácie ako vkladanie, úpravu, mazanie či vyhľadávanie záznamov pohodlným a intuitívnym spôsobom."
+      sk: "Táto aplikácia, implementovaná v Pythone, umožňuje registráciu a správu vozidiel a ich majiteľov s využitím vlastného implementovaného databázového systému. Využíva dátové štruktúry heap file a extendible hash file na efektívne ukladanie a vyhľadávanie údajov. Súčasťou je aj grafické používateľské rozhranie (GUI), ktoré umožňuje používateľom vykonávať operácie ako vkladanie, úpravu, mazanie či vyhľadávanie záznamov pohodlným a intuitívnym spôsobom."
     },
     image: "/images/hf.png"
   },
@@ -51,8 +51,8 @@ const projects = [
       sk: "Web registračný a logovací systém"
     },
     description: {
-      en: "A backend-oriented project where I implement my own registration and login system using JWT. The system sends the JWT in the form of cookies and verifies the user with another token to prevent misuse of the token over an extended period. The project is built with Node.js, React.js, and MongoDB.",
-      sk: "Backendovo zameraný projekt, v ktorom implementujem vlastný systém prihlasovania a registrovania pomocou JWT. Systém posiela JWT vo forme cookies a overuje používateľa pomocou ďalšieho tokenu, čo zabráni zneužitiu tokenu na dlhší čas. Projekt je postavený na Node.js, React.js a MongoDB."
+      en: "Backend-oriented project where I implemented my own registration and login system using JWT. The system sends the JWT in the form of cookies and verifies the user with refresh token to prevent misuse of the token over an extended period. The project is built with Node.js, React.js, and MongoDB.",
+      sk: "Backendovo zameraný projekt, v ktorom implementujem vlastný systém prihlasovania a registrovania pomocou JWT. Systém posiela JWT vo forme cookies a overuje používateľa pomocou refresh tokenu, čo zabráni zneužitiu tokenu na dlhší čas. Projekt je postavený na Node.js, React.js a MongoDB."
     },
     image: null
   },
@@ -62,8 +62,8 @@ const projects = [
       sk: "SHARE webová aplikácia"
     },
     description: {
-      en: "I developed a fullstack web application using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics. The application features a registration and login system with JWT-based authentication. Sequelize is used for database interaction, and bcrypt is implemented for secure password hashing.",
-      sk: "Vyvinul som fullstack webovú aplikáciu pomocou React, Express a Oracle SQL databázy, ktorá umožňuje používateľom pridávať, komentovať, lajknúť, filtrovať príspevky a zobrazovať štatistiky. Aplikácia obsahuje systém registrácie a prihlasovania s autentifikáciou založenou na JWT. Na interakciu s databázou sa používa Sequelize a bcrypt, ktorý zabezpečuje hashovanie hesiel."
+      en: "Fullstack web application implemented using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics. The application features a registration and login system with JWT-based authentication. Sequelize is used for database interaction, and bcrypt is implemented for secure password hashing.",
+      sk: "Fullstack webová aplikácia vyvíjaná pomocou React, Express a Oracle SQL databázy, ktorá umožňuje používateľom pridávať, komentovať, lajkovať, filtrovať príspevky a zobrazovať štatistiky. Aplikácia obsahuje systém registrácie a prihlasovania s autentifikáciou založenou na JWT. Na interakciu s databázou som použil Sequelize a bcrypt, ktorý zabezpečuje hashovanie hesiel."
     },
     image: "/images/share.png"
   },
@@ -96,7 +96,7 @@ const projects = [
     },
     description: {
       en: "A Spotify widget built in Python using Tkinter interacts with the Spotify API to control playback from a compact interface. Users can skip to the next or previous track and navigate through the current track using keyboard shortcuts, even while working in other applications. Additionally, when a track is skipped, the widget displays the name of the current track in a small window.",
-      sk: "Spotify widget postavený v Pythone pomocou Tkinter interaguje so Spotify API na ovládanie prehrávania z kompaktného rozhrania. Používatelia môžu preskočiť na ďalšiu alebo predchádzajúcu skladbu a navigovať cez aktuálnu skladbu pomocou klávesových skratiek, aj keď pracujú v iných aplikáciách. Ďalej, keď je skladba preskočená, widget zobrazuje názov aktuálnej skladby v malom okne."
+      sk: "Spotify widget postavený v Pythone pomocou Tkinter interaguje so Spotify API na ovládanie prehrávania z kompaktného rozhrania. Používatelia môžu preskočiť na ďalšiu alebo predchádzajúcu skladbu pomocou klávesových skratiek, aj keď pracujú v iných aplikáciách. Ak je skladba preskočená, widget zobrazuje názov aktuálnej skladby v malom okne."
     },
     image: null
   },
@@ -106,8 +106,8 @@ const projects = [
       sk: "Jednoduchý metronóm pre hranie na gitare"
     },
     description: {
-      en: "I developed a simple metronome application using the Tkinter library in Python. This tool helps me maintain tempo and play with a consistent rhythm while practicing guitar. The application features an intuitive interface that allows interaction via keyboard keys for easy control. Additionally, I used threading techniques to ensure smooth and precise timing.",
-      sk: "Vyvinul som jednoduchú aplikáciu metronómu pomocou knižnice Tkinter v Pythone. Tento nástroj mi pomáha udržiavať tempo a hrať s konzistentným rytmom pri cvičení na gitare. Aplikácia obsahuje intuitívne rozhranie, ktoré umožňuje interakciu cez klávesy klávesnice pre jednoduché ovládanie. Okrem toho som použil techniky vláken, aby som zabezpečil plynulé a presné načasovanie."
+      en: "Simple metronome application implemented using the Tkinter library in Python. This tool helps me maintain tempo and play with a consistent rhythm while practicing guitar. The application features an intuitive interface that allows interaction via keyboard keys for easy control. Additionally, I used threading techniques to ensure smooth and precise timing.",
+      sk: "Jednoduchá aplikácia metronómu implementovaná pomocou knižnice Tkinter v Pythone. Implementoval som ju pretože hrávam na gitaru. Aplikácia mi pomáha udržiavať tempo a hrať s konzistentným rytmom pri cvičení na gitare. Aplikácia obsahuje intuitívne rozhranie, ktoré umožňuje interakciu pomocoou klávesových skratiek pre jednoduché ovládanie. Okrem toho som použil techniky vláken, aby som zabezpečil plynulé a presné načasovanie."
     },
     image: "images/metronome-picture.png"
   }
@@ -271,7 +271,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b bg-gray-300 text-gray-900 font-sans scroll-smooth">
-      <header className="fixed top-8 right-4 z-50 flex items-center gap-6 bg-blue-500 text-white py-3 px-4 rounded shadow-lg opacity-70 hover:opacity-100 transition-opacity duration-300">
+      <header className="fixed top-0 md:top-8 right-0 left-0 md:right-4 md:left-auto z-50 flex items-center gap-6 bg-blue-500 text-white py-3 px-4 md:rounded shadow-lg opacity-50 hover:opacity-100 transition-opacity duration-300 justify-between">
         <nav className="flex gap-4 text-base font-semibold">
           <a
             href="#intro"
@@ -298,11 +298,11 @@ export default function Portfolio() {
             {lang === 'en' ? 'Technologies' : 'Technológie'}
           </a>
         </nav>
-        <button onClick={toggleLang} className="px-1 py-1 rounded flex items-center">
+        <button onClick={toggleLang} className="px-1 py-1 rounded flex items-center self-end">
           <img
             src={lang === 'en' ? "/images/flag_sk.png" : "/images/flag_uk.png"}
             alt={lang === 'en' ? 'Slovak Flag' : 'US Flag'}
-            className="w-[1.2vw] h-[1.2vw] hover:scale-105 transition-transform"
+            className="w-[20px] min-w-[20px] min-h-[20px] jhover:scale-105 transition-transform"
           />
         </button>
       </header>
@@ -333,21 +333,26 @@ export default function Portfolio() {
         className="p-6 min-h-screen flex flex-col bg-gradient-to-b from-blue-300 to-gray-300 relative"
       >
         <div className="absolute top-[-128px] left-0 w-full h-32 bg-gradient-to-b from-gray-300 to-blue-300 pointer-events-none z-10" />
-        <h3 className="text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'Projects' : 'Projekty'}</h3>
-        <div className="bg-white rounded-xl shadow p-4 w-full flex-1 flex flex-col">
+        <h3 className="text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'My projects' : 'Moje projekty'}</h3>
+        <div className="bg-gray-300 rounded-xl shadow p-8 w-full flex-1 flex flex-col shadow">
           <div className="flex-grow">
-            <h4 className="text-lg font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
             {projects[projectIndex].image ? (
-              <div className="flex flex-row gap-[1%]">
-                <p className="w-[50%] text-base leading-relaxed text-justif">{projects[projectIndex].description[lang]}</p>
+              <div className="flex flex-col md:flex-row gap-[12px] md:gap-[24px]">
+                <div className="flex flex-col">
+                  <h4 className="text-2xl font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
+                  <p className="w-full text-base leading-relaxed text-justify">{projects[projectIndex].description[lang]}</p>
+                </div>
                 <img
                   src={projects[projectIndex].image ?? undefined}
                   alt={projects[projectIndex].title[lang]}
-                  className="rounded w-[50%] object-contain mx-auto justify-self-center align-self-center"
+                  className="rounded w-full max-h-[430px] object-contain mx-auto shadow-xl shadow-black"
                 />
               </div>
             ) : (
-              <p className="mt-1 text-base leading-relaxed text-justify">{projects[projectIndex].description[lang]}</p>
+              <>
+                <h4 className="text-2xl font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
+                <p className="mt-1 text-base leading-relaxed text-justify">{projects[projectIndex].description[lang]}</p>
+              </>
             )}
           </div>
           <div className="flex justify-between mt-4 items-center">
@@ -358,7 +363,6 @@ export default function Portfolio() {
               {lang === 'en' ? 'Previous' : 'Predošlý'}
             </button>
 
-            {/* Project Count Display */}
             <span className="text-lg font-medium text-gray-700">
               {lang === 'en' ? `${projectIndex + 1} / ${projects.length}` : `${projectIndex + 1} / ${projects.length}`}
             </span>
@@ -378,13 +382,13 @@ export default function Portfolio() {
         <h3 className="text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'Technologies' : 'Technológie'}</h3>
         <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {techStack.map((tech) => (
-            <li className="flex items-center gap-2 bg-blue-300 text-black-900 px-3 py-2 rounded shadow-sm">
+            <li className="flex flex-col md:flex-row items-center gap-2 bg-blue-300 text-black-900 px-3 py-2 rounded shadow-xl">
               <img
                 src={tech.image ?? undefined}
                 alt={tech.title[lang]}
                 className="w-6 h-6 object-contain"
               />
-              <span>{tech.title[lang]}</span>
+              <span className="text-center leading-relaxed">{tech.title[lang]}</span>
             </li>
           ))}
         </ul>
