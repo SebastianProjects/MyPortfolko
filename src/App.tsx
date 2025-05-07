@@ -377,7 +377,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-
       <section id="tech" className="p-6 min-h-screen mx-auto flex items-center justify-center flex-col relative">
         <h3 className="text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'Technologies' : 'Technológie'}</h3>
         <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
