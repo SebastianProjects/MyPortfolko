@@ -13,9 +13,9 @@
     outline-offset: 2px;
 }
 
-html {
+*, html {
     font-family: "Kanit", sans-serif;
-    font-weight: 100;
+    font-weight: 200;
     font-style: normal;
     scroll-behavior: smooth;
 }
