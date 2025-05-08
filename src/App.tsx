@@ -257,7 +257,7 @@ const techStack = [
   {
     title: {
       en: "Microsoft office",
-      sk: "Microsoft office"
+      sk: "Microsoft offic"
     },
     image: "images/microsoft-logo.png"
   },
