@@ -18,8 +18,8 @@ const projects = [
       sk: "Aplikácia na optimalizáciu umiestnenia bezpilotných monitorovacích systémov"
     },
     description: {
-      en: "As part of my bachelor thesis project, I developed an application that allows users to define an area on a map using OpenStreetMap, enabling exploration of different regions. Users can perform calculations for the placement of UAV devices and create schedules based on these placement calculations. The application is programmed in Python, utilizing the Tkinter library for the graphical interface, along with the TkinterMapView library and the Geocoder library. Within the implementation I employed programming techniques such as inheritance, polymorphism, threading and I used discrete simulation for generating schedules.",
-      sk: "V rámci mojej bakalárskej práce som vyvinul aplikáciu, ktorá umožňuje používateľom definovať oblasť na mape pomocou OpenStreetMap. Používatelia môžu vykonávať výpočty pre umiestnenie UAV zariadení a vytvárať časové rozvrhy na základe týchto výpočtov. Aplikácia je implementovaná v Pythone, s použitím knižnice Tkinter pre grafické rozhranie spolu s knižnicou TkinterMapView a knižnicou Geocoder. Pri implementácií som používal programovacie techniky ako dedičnosť, polymorfizmus a multithreading a využíval diskrétnu simuláciu na generovanie rozvrhov."
+      en: "As part of my bachelor thesis, I developed a Python application with a Tkinter GUI that uses OpenStreetMap (via TkinterMapView) to define areas and calculate optimal UAV placements. It also generates schedules using discrete simulation. The app leverages OOP (inheritance, polymorphism), threading, and the Geocoder library.",
+      sk: "V rámci bakalárskej práce som vyvinul aplikáciu v Pythone s grafickým rozhraním Tkinter, ktorá využíva OpenStreetMap (cez TkinterMapView) na definovanie oblastí a výpočet optimálneho umiestnenia UAV. Pomocou diskrétnej simulácie generuje rozvrhy. Využil som OOP (dedičnosť, polymorfizmus), multithreading a knižnicu Geocoder."
     },
     image: "/images/uav-picture.png"
   },
@@ -40,8 +40,8 @@ const projects = [
       sk: "Aplikácia pre registráciu vozidiel a ich majiteľov s použitím vlastnej databázy"
     },
     description: {
-      en: "This application, implemented in Python, enables the registration and management of vehicles and their owners using a custom-built database system. It implements a heap file and an extendible hash file structure for efficient data storage and retrieval. A graphical user interface (GUI) is also included, allowing users to perform operations such as inserting, updating, deleting, and searching records in an intuitive and user-friendly manner.",
-      sk: "Táto aplikácia, implementovaná v Pythone, umožňuje registráciu a správu vozidiel a ich majiteľov s využitím vlastného implementovaného databázového systému. Využíva dátové štruktúry heap file a extendible hash file na efektívne ukladanie a vyhľadávanie údajov. Súčasťou je aj grafické používateľské rozhranie (GUI), ktoré umožňuje používateľom vykonávať operácie ako vkladanie, úpravu, mazanie či vyhľadávanie záznamov pohodlným a intuitívnym spôsobom."
+      en: "This application, implemented in Python, enables the registration and management of vehicles and their owners using a custom-built database system and simple GUI. It implements a heap file and an extendible hash file structure for efficient data storage and retrieval.",
+      sk: "Táto aplikácia, implementovaná v Pythone, umožňuje registráciu a správu vozidiel a ich majiteľov s využitím vlastného implementovaného databázového systému a jednoduchého GUI. Využíva dátové štruktúry heap file a extendible hash file na efektívne ukladanie a vyhľadávanie údajov."
     },
     image: "/images/hf.png"
   },
@@ -62,8 +62,8 @@ const projects = [
       sk: "SHARE webová aplikácia"
     },
     description: {
-      en: "Fullstack web application implemented using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics. The application features a registration and login system with JWT-based authentication. Sequelize is used for database interaction, and bcrypt is implemented for secure password hashing.",
-      sk: "Fullstack webová aplikácia vyvíjaná pomocou React, Express a Oracle SQL databázy, ktorá umožňuje používateľom pridávať, komentovať, lajkovať, filtrovať príspevky a zobrazovať štatistiky. Aplikácia obsahuje systém registrácie a prihlasovania s autentifikáciou založenou na JWT. Na interakciu s databázou som použil Sequelize a bcrypt, ktorý zabezpečuje hashovanie hesiel."
+      en: "Fullstack web application implemented using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics. The application features a registration and login system with JWT-based authentication and password hashing.",
+      sk: "Fullstack webová aplikácia vyvíjaná pomocou React, Express a Oracle SQL databázy, ktorá umožňuje používateľom pridávať, komentovať, lajkovať, filtrovať príspevky a zobrazovať štatistiky. Aplikácia obsahuje systém registrácie a prihlasovania s autentifikáciou založenou na JWT spolu a hešovaním hesiel."
     },
     image: "/images/share.png"
   },
@@ -106,8 +106,8 @@ const projects = [
       sk: "Jednoduchý metronóm pre hranie na gitare"
     },
     description: {
-      en: "Simple metronome application implemented using the Tkinter library in Python. This tool helps me maintain tempo and play with a consistent rhythm while practicing guitar. The application features an intuitive interface that allows interaction via keyboard keys for easy control. Additionally, I used threading techniques to ensure smooth and precise timing.",
-      sk: "Jednoduchá aplikácia metronómu implementovaná pomocou knižnice Tkinter v Pythone. Implementoval som ju pretože hrávam na gitaru. Aplikácia mi pomáha udržiavať tempo a hrať s konzistentným rytmom pri cvičení na gitare. Aplikácia obsahuje intuitívne rozhranie, ktoré umožňuje interakciu pomocoou klávesových skratiek pre jednoduché ovládanie. Okrem toho som použil techniky vláken, aby som zabezpečil plynulé a presné načasovanie."
+      en: "Simple metronome application implemented using the Tkinter library for intuiive GUI and threading in Python. This tool helps me maintain tempo and play with a consistent rhythm while practicing guitar.",
+      sk: "Jednoduchá aplikácia metronómu implementovaná pomocou knižnice Tkinter pre intuitívne GUI a vlákien v Pythone. Implementoval som ju pretože hrávam na gitaru. Aplikácia mi pomáha udržiavať tempo a hrať s konzistentným rytmom pri cvičení na gitare."
     },
     image: "images/metronome-picture.png"
   }
@@ -266,8 +266,17 @@ const techStack = [
 export default function Portfolio() {
   const [lang, setLang] = useState<'en' | 'sk'>('en');
   const [projectIndex, setProjectIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleLang = () => setLang(lang === 'en' ? 'sk' : 'en');
+
+  const showDescripton = () => {
+    setIsOpen(true);
+  }
+
+  const hideDescription = () => {
+    setIsOpen(false);
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b bg-gray-300 text-gray-900 font-sans scroll-smooth">
@@ -333,20 +342,36 @@ export default function Portfolio() {
         className="p-6 min-h-screen flex flex-col bg-gradient-to-b from-blue-300 to-gray-300 relative"
       >
         <div className="absolute top-[-128px] left-0 w-full h-32 bg-gradient-to-b from-gray-300 to-blue-300 pointer-events-none z-10" />
-        <h3 className="text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'My projects' : 'Moje projekty'}</h3>
-        <div className="bg-gray-300 rounded-xl shadow p-8 w-full flex-1 flex flex-col shadow">
+        <h3 className="text-5xl font-bold mb-6 text-center">{lang === 'en' ? 'My projects' : 'Moje projekty'}</h3>
+        <div className="p-4 w-full flex-1 flex flex-col">
           <div className="flex-grow">
             {projects[projectIndex].image ? (
-              <div className="flex flex-col md:flex-row gap-[12px] md:gap-[24px]">
-                <div className="flex flex-col">
-                  <h4 className="text-2xl font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
-                  <p className="w-full text-base leading-relaxed text-justify">{projects[projectIndex].description[lang]}</p>
-                </div>
+              <div className="flex flex-col gap-[6px] md:gap-[12px]">
+                <h4 className="text-2xl font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
                 <img
                   src={projects[projectIndex].image ?? undefined}
                   alt={projects[projectIndex].title[lang]}
-                  className="rounded w-full max-h-[430px] object-contain mx-auto shadow-xl shadow-black"
+                  className="rounded max-h-[410px] object-contain mx-auto shadow-xl shadow-black"
                 />
+
+                {isOpen ? (
+                  <>
+                    <button
+                      onClick={() => hideDescription()}
+                      className="font-bold text-blue-600 hover:scale-105 duration-300 transition-transform text-bold"
+                    >
+                      {lang === 'en' ? 'Description' : 'Popis'} &uarr;
+                    </button>
+                    <p className="w-full text-base leading-relaxed text-justify">{projects[projectIndex].description[lang]}</p>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => showDescripton()}
+                    className="font-bold text-blue-600 hover:scale-105 duration-300 transition-transform text-bold"
+                  >
+                    {lang === 'en' ? 'Description' : 'Popis'} &darr;
+                  </button>
+                )}
               </div>
             ) : (
               <>
@@ -358,18 +383,18 @@ export default function Portfolio() {
           <div className="flex justify-between mt-4 items-center">
             <button
               onClick={() => setProjectIndex((projectIndex - 1 + projects.length) % projects.length)}
-              className="font-bold text-blue-600 hover:scale-105 transition-transform text-bold"
+              className="font-bold text-blue-600 hover:scale-105 transition-transform duration-300 text-bold"
             >
               {lang === 'en' ? 'Previous' : 'Predošlý'}
             </button>
 
-            <span className="text-lg font-bold text-gray-700">
+            <span className="text-lg font-bold pr-8 text-gray-700">
               {lang === 'en' ? `${projectIndex + 1} / ${projects.length}` : `${projectIndex + 1} / ${projects.length}`}
             </span>
 
             <button
               onClick={() => setProjectIndex((projectIndex + 1) % projects.length)}
-              className="font-bold text-blue-600 hover:scale-105 transition-transform"
+              className="font-bold text-blue-600 hover:scale-105 duration-300 transition-transform"
             >
               {lang === 'en' ? 'Next' : 'Ďalší'}
             </button>
@@ -379,9 +404,9 @@ export default function Portfolio() {
 
       <section id="tech" className="p-6 min-h-screen mx-auto flex items-center justify-center flex-col relative">
         <h3 className="text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'Technologies' : 'Technológie'}</h3>
-        <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <ul className="flex flex-col gap-5 md:grid md:grid-cols-3 gap-4">
           {techStack.map((tech) => (
-            <li className="flex flex-col md:flex-row items-center gap-2 bg-blue-300 text-black-900 px-3 py-2 rounded shadow-xl">
+            <li className="flex flex-row items-center gap-2 bg-blue-300 text-black-900 px-3 py-2 rounded shadow-xl">
               <img
                 src={tech.image ?? undefined}
                 alt={tech.title[lang]}
