@@ -3,8 +3,8 @@ import React, { useState } from "react";
 const projects = [
   {
     title: {
-      en: "Application for simulation of a joinery company",
-      sk: "Simulácia pre stolársku firmu"
+      en: "Application for simulation of a joinery company processes",
+      sk: "Aplikácia pre simulácia procesov stolárskej firmy"
     },
     description: {
       en: "This application simulates the order processing workflow in a joinery company, where various technological steps are performed by different types of workers. The simulation is implemented in Java using the ABAsim library. It produces all necessary statistics and includes an animation that visually represents each process.",
@@ -267,20 +267,28 @@ export default function Portfolio() {
   const [lang, setLang] = useState<'en' | 'sk'>('en');
   const [projectIndex, setProjectIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const toggleLang = () => setLang(lang === 'en' ? 'sk' : 'en');
 
-  const showDescripton = () => {
-    setIsOpen(true);
-  }
+  const handleProjectChange = (direction: 'prev' | 'next') => {
+    if (isAnimating) return;
 
-  const hideDescription = () => {
-    setIsOpen(false);
-  }
+    setIsAnimating(true);
+
+    setTimeout(() => {
+      setProjectIndex((prevIndex) =>
+        direction === 'prev'
+          ? (prevIndex - 1 + projects.length) % projects.length
+          : (prevIndex + 1) % projects.length
+      );
+      setIsAnimating(false);
+    }, 500);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b bg-gray-300 text-gray-900 font-sans scroll-smooth">
-      <header className="fixed top-0 md:top-8 right-0 left-0 md:right-4 md:left-auto z-50 flex items-center gap-6 bg-blue-500 text-white py-3 px-4 md:rounded shadow-lg opacity-50 hover:opacity-100 transition-opacity duration-300 justify-between">
+      <header className="fixed top-0 md:top-8 right-0 left-0 md:right-4 md:left-auto z-50 flex items-center gap-6 bg-blue-500 text-white py-3 px-4 md:rounded shadow-lg opacity-50 hover:opacity-100 transition-opacity duration-500 justify-between">
         <nav className="flex gap-4 text-base font-semibold">
           <a
             href="#intro"
@@ -344,34 +352,32 @@ export default function Portfolio() {
         <div className="absolute top-[-128px] left-0 w-full h-32 bg-gradient-to-b from-gray-300 to-blue-300 pointer-events-none z-10" />
         <h3 className="text-5xl font-bold mb-6 text-center">{lang === 'en' ? 'My projects' : 'Moje projekty'}</h3>
         <div className="p-4 w-full flex-1 flex flex-col">
-          <div className="flex-grow">
+          <div className={`flex-grow transition-opacity duration-500 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
+            }`}>
             {projects[projectIndex].image ? (
               <div className="flex flex-col gap-[6px] md:gap-[12px]">
                 <h4 className="text-2xl font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
                 <img
                   src={projects[projectIndex].image ?? undefined}
                   alt={projects[projectIndex].title[lang]}
-                  className="rounded max-h-[410px] object-contain mx-auto shadow-xl shadow-black"
+                  className="rounded max-h-[380px] object-contain mx-auto shadow-xl shadow-black"
                 />
 
-                {isOpen ? (
-                  <>
-                    <button
-                      onClick={() => hideDescription()}
-                      className="font-bold text-blue-600 hover:scale-105 duration-300 transition-transform text-bold"
-                    >
-                      {lang === 'en' ? 'Description' : 'Popis'} &uarr;
-                    </button>
-                    <p className="w-full text-base leading-relaxed text-justify">{projects[projectIndex].description[lang]}</p>
-                  </>
-                ) : (
-                  <button
-                    onClick={() => showDescripton()}
-                    className="font-bold text-blue-600 hover:scale-105 duration-300 transition-transform text-bold"
-                  >
-                    {lang === 'en' ? 'Description' : 'Popis'} &darr;
-                  </button>
-                )}
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="font-bold text-blue-600 hover:scale-105 pt-2 duration-500 transition-transform"
+                >
+                  {lang === 'en' ? 'Description' : 'Popis'} {isOpen ? '↑' : '↓'}
+                </button>
+
+                <div
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+                    }`}
+                >
+                  <p className="text-base leading-relaxed text-justify">
+                    {projects[projectIndex].description[lang]}
+                  </p>
+                </div>
               </div>
             ) : (
               <>
@@ -382,8 +388,8 @@ export default function Portfolio() {
           </div>
           <div className="flex justify-between mt-4 items-center">
             <button
-              onClick={() => setProjectIndex((projectIndex - 1 + projects.length) % projects.length)}
-              className="font-bold text-blue-600 hover:scale-105 transition-transform duration-300 text-bold"
+              onClick={() => handleProjectChange('prev')}
+              className="font-bold text-blue-600 hover:scale-105 transition-transform duration-500 text-bold"
             >
               {lang === 'en' ? 'Previous' : 'Predošlý'}
             </button>
@@ -393,8 +399,8 @@ export default function Portfolio() {
             </span>
 
             <button
-              onClick={() => setProjectIndex((projectIndex + 1) % projects.length)}
-              className="font-bold text-blue-600 hover:scale-105 duration-300 transition-transform"
+              onClick={() => handleProjectChange('next')}
+              className="font-bold text-blue-600 hover:scale-105 duration-500 transition-transform"
             >
               {lang === 'en' ? 'Next' : 'Ďalší'}
             </button>
