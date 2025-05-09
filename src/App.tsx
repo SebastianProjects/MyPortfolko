@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
   {
@@ -14,12 +15,12 @@ const projects = [
   },
   {
     title: {
-      en: "Application for optimalization placement of unmanned monitoring systems",
+      en: "Application for optimization placement of unmanned monitoring systems",
       sk: "Aplikácia na optimalizáciu umiestnenia bezpilotných monitorovacích systémov"
     },
     description: {
-      en: "As part of my bachelor thesis, I developed a Python application with a Tkinter GUI that uses OpenStreetMap (via TkinterMapView) to define areas and calculate optimal UAV placements. It also generates schedules using discrete simulation. The app leverages OOP (inheritance, polymorphism), threading, and the Geocoder library.",
-      sk: "V rámci bakalárskej práce som vyvinul aplikáciu v Pythone s grafickým rozhraním Tkinter, ktorá využíva OpenStreetMap (cez TkinterMapView) na definovanie oblastí a výpočet optimálneho umiestnenia UAV. Pomocou diskrétnej simulácie generuje rozvrhy. Využil som OOP (dedičnosť, polymorfizmus), multithreading a knižnicu Geocoder."
+      en: "As part of my bachelor thesis, I developed a Python application with a Tkinter GUI that uses OpenStreetMap (via TkinterMapView) to define areas and calculate optimal UAV placements. It also generates schedules using discrete simulation.",
+      sk: "V rámci bakalárskej práce som vyvinul aplikáciu v Pythone s grafickým rozhraním Tkinter, ktorá využíva OpenStreetMap (cez TkinterMapView) na definovanie oblastí a výpočet optimálneho umiestnenia UAV. Pomocou diskrétnej simulácie generuje rozvrhy."
     },
     image: "/images/uav-picture.png"
   },
@@ -36,7 +37,7 @@ const projects = [
   },
   {
     title: {
-      en: "Application for registering vehicles and their owners using own implemented database",
+      en: "Application for registering vehicles using own implemented database",
       sk: "Aplikácia pre registráciu vozidiel a ich majiteľov s použitím vlastnej databázy"
     },
     description: {
@@ -269,7 +270,36 @@ export default function Portfolio() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const autoScrolling = useRef(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const toggleLang = () => setLang(lang === 'en' ? 'sk' : 'en');
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!e.currentTarget.hash) return;
+    autoScrolling.current = true;
+    setIsNavbarVisible(false);
+
+    timeoutRef.current = setTimeout(() => {
+      autoScrolling.current = false;
+    }, 1000);
+  };
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (!autoScrolling.current) {
+        setIsNavbarVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
 
   const handleProjectChange = (direction: 'prev' | 'next') => {
     if (isAnimating) return;
@@ -287,8 +317,8 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b bg-gray-300 text-gray-900 font-sans scroll-smooth">
-      <header className="fixed top-0 md:top-8 right-0 left-0 md:right-4 md:left-auto z-50 flex items-center gap-6 bg-blue-500 text-white py-3 px-4 md:rounded shadow-lg opacity-50 hover:opacity-100 transition-opacity duration-500 justify-between">
+    <div className="min-h-screen bg-secondary text-text-primary font-medium scroll-smooth">
+      <header className={`fixed top-0 md:top-8 right-0 left-0 md:right-4 md:left-auto z-50 flex items-center gap-6 bg-button py-3 px-4 md:rounded shadow-lg opacity-50 hover:opacity-100 transition-opacity duration-500 justify-between ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"} md:-translate-y-0 transition-transform duration-500`}>
         <nav className="flex gap-4 text-base font-semibold">
           <a
             href="#intro"
@@ -298,18 +328,21 @@ export default function Portfolio() {
           </a>
           <a
             href="#about"
+            onClick={handleNavClick}
             className="font-bold hover:scale-105 transition-transform"
           >
             {lang === 'en' ? 'About' : 'O mne'}
           </a>
           <a
             href="#projects"
+            onClick={handleNavClick}
             className="font-bold hover:scale-105 transition-transform"
           >
             {lang === 'en' ? 'Projects' : 'Projekty'}
           </a>
           <a
             href="#tech"
+            onClick={handleNavClick}
             className="font-bold hover:scale-105 transition-transform"
           >
             {lang === 'en' ? 'Technologies' : 'Technológie'}
@@ -325,20 +358,20 @@ export default function Portfolio() {
       </header>
 
 
-      <section id="intro" className="p-6 mt-8px min-h-screen text-center bg-gradient-to-b from-blue-200 to-blue-300 flex items-center justify-center flex-col">
+      <section id="intro" className="p-6 mt-8px min-h-screen text-center bg-gradient-to-b from-secondary to-primary flex items-center justify-center flex-col">
         <img src="/images/profile.png" alt="My profile" className="mx-auto rounded-3xl w-48 h-48" />
-        <h2 className="text-5xl mt-6 mb-2 font-semibold">{lang === 'en' ? 'Hi, I\'m Sebastián' : 'Ahoj, som Sebastián'}</h2>
-        <p className="max-w-xl text-xl mx-auto mt-2">
+        <h2 className="text-3xl md:text-5xl mt-6 mb-2 font-semibold text-text-primary">{lang === 'en' ? 'Hi, I\'m Sebastián' : 'Ahoj, som Sebastián'}</h2>
+        <p className="max-w-xl text-xl mx-auto mt-2 text-text-secondary">
           {lang === 'en'
             ? 'passionate web developer focused on building efficient and scalable solutions.'
             : 'developer webových a desktopových aplikácií zameraný na efektívne a škálovateľné riešenia.'}
         </p>
-        <div className="absolute bottom-[-128px] left-0 w-full h-32 bg-gradient-to-b from-blue-300 to-gray-300 pointer-events-none z-10" />
+        <div className="absolute bottom-[-128px] left-0 w-full h-32 bg-gradient-to-b from-primary to-secondary pointer-events-none z-10" />
       </section>
 
       <section id="about" className="p-6 min-h-screen mx-auto flex items-center justify-center flex-col">
-        <h3 className="text-5xl font-bold mb-4">{lang === 'en' ? 'About Me' : 'O mne'}</h3>
-        <p className="max-w-4xl text-xl text-base leading-relaxed text-justify">
+        <h3 className="text-3xl md:text-5xl font-bold mb-4 text-text-primary">{lang === 'en' ? 'About Me' : 'O mne'}</h3>
+        <p className="max-w-4xl text-xl text-base leading-relaxed text-justify text-text-secondary">
           {lang === 'en'
             ? 'I am a graduate of a bachelor\'s degree in IT and I am currently continuing my studies at the master\'s level in the same field. I focus on developing web and desktop applications. I excel at problem-solving, have excellent time management skills, and I am always eager to learn new things. I enjoy exploring new technologies to continually improve myself.'
             : 'Som absolventom bakalárskeho štúdia v IT. Momentálne pokračujem v inžinierskom štúdiu v rovnakej oblasti. Venujem sa vývoju webových a desktopových aplikácií. Vynikám v riešení problémov, mám výborný time management a vždy sa snažím učiť nové veci, rád sa zoznamujem s novými technológiami, aby som sa mohol neustále zlepšovať.'}
@@ -347,72 +380,75 @@ export default function Portfolio() {
 
       <section
         id="projects"
-        className="p-6 min-h-screen flex flex-col bg-gradient-to-b from-blue-300 to-gray-300 relative"
+        className="p-6 min-h-screen flex flex-col bg-gradient-to-b from-primary to-secondary relative"
       >
-        <div className="absolute top-[-128px] left-0 w-full h-32 bg-gradient-to-b from-gray-300 to-blue-300 pointer-events-none z-10" />
-        <h3 className="text-5xl font-bold mb-6 text-center">{lang === 'en' ? 'My projects' : 'Moje projekty'}</h3>
-        <div className="p-4 w-full flex-1 flex flex-col">
-          <div className={`flex-grow transition-opacity duration-500 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
-            }`}>
-            {projects[projectIndex].image ? (
-              <div className="flex flex-col gap-[6px] md:gap-[12px]">
-                <h4 className="text-2xl font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
-                <img
-                  src={projects[projectIndex].image ?? undefined}
-                  alt={projects[projectIndex].title[lang]}
-                  className="rounded max-h-[380px] object-contain mx-auto shadow-xl shadow-black"
-                />
+        <div className="absolute top-[-128px] left-0 w-full h-32 bg-gradient-to-b from-secondary to-primary pointer-events-none z-10" />
+        <h3 className="text-3xl md:text-5xl font-bold text-center text-text-primary">
+          {lang === 'en' ? 'My projects' : 'Moje projekty'}
+        </h3>
 
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="font-bold text-blue-600 hover:scale-105 pt-2 duration-500 transition-transform"
-                >
-                  {lang === 'en' ? 'Description' : 'Popis'} {isOpen ? '↑' : '↓'}
-                </button>
+        <div className="p-4 w-full flex-1 flex flex-row items-center justify-center">
+          <button
+            onClick={() => handleProjectChange("prev")}
+            className="font-bold text-button mx-auto hidden md:block hover:text-button-hover transition-transform duration-300"
+          >
+            ◀ {projectIndex - 1 < 0 ? projects.length - projectIndex : projectIndex}/{projects.length}
+          </button>
+          <div className="relative w-full md:max-w-[720px] max-w-4xl h-[520px] overflow-hidden rounded shadow-2xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={projectIndex}
+                className="absolute inset-0 flex flex-col items-center text-center px-4"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                drag="x"
+                dragElastic={0.1}
+                onDragEnd={(e, info) => {
+                  if (info.offset.x < -75) {
+                    handleProjectChange("next");
+                  } else if (info.offset.x > 75) {
+                    handleProjectChange("prev");
+                  }
+                }}
+              >
 
-                <div
-                  className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+                {projects[projectIndex].image && (
+                  <img
+                    onClick={() => setIsOpen(!isOpen)}
+                    src={projects[projectIndex].image ?? undefined}
+                    alt={projects[projectIndex].title[lang]}
+                    className="rounded max-h-[360px] object-contain mx-auto shadow-xl"
+                    loading="eager"
+                  />
+                )}
+                <h4 className="text-xl font-semibold p-2 text-text-primary">
+                  {projects[projectIndex].title[lang]}
+                </h4>
+                <motion.p
+                  className={`text-base pb-2 leading-relaxed text-justify text-text-secondary transition-all duration-500 ease-in-out max-w-2xl"
                     }`}
                 >
-                  <p className="text-base leading-relaxed text-justify">
-                    {projects[projectIndex].description[lang]}
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <>
-                <h4 className="text-2xl font-semibold text-center mb-4">{projects[projectIndex].title[lang]}</h4>
-                <p className="mt-1 text-base leading-relaxed text-justify">{projects[projectIndex].description[lang]}</p>
-              </>
-            )}
+                  {projects[projectIndex].description[lang]}
+                </motion.p>
+              </motion.div>
+            </AnimatePresence>
           </div>
-          <div className="flex justify-between mt-4 items-center">
-            <button
-              onClick={() => handleProjectChange('prev')}
-              className="font-bold text-blue-600 hover:scale-105 transition-transform duration-500 text-bold"
-            >
-              {lang === 'en' ? 'Previous' : 'Predošlý'}
-            </button>
 
-            <span className="text-lg font-bold pr-8 text-gray-700">
-              {lang === 'en' ? `${projectIndex + 1} / ${projects.length}` : `${projectIndex + 1} / ${projects.length}`}
-            </span>
-
-            <button
-              onClick={() => handleProjectChange('next')}
-              className="font-bold text-blue-600 hover:scale-105 duration-500 transition-transform"
-            >
-              {lang === 'en' ? 'Next' : 'Ďalší'}
-            </button>
-          </div>
+          <button
+            onClick={() => handleProjectChange("next")}
+            className="font-bold text-button mx-auto hidden md:block hover:text-button-hover transition-transform duration-300"
+          >
+            {(projectIndex + 1) % (projects.length) + 1}/{projects.length} ▶
+          </button>
         </div>
-      </section>
+      </section >
 
       <section id="tech" className="p-6 min-h-screen mx-auto flex items-center justify-center flex-col relative">
-        <h3 className="text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'Technologies' : 'Technológie'}</h3>
+        <h3 className="text-3xl md:text-5xl font-bold mb-8 text-center">{lang === 'en' ? 'Technologies' : 'Technológie'}</h3>
         <ul className="flex flex-col gap-5 md:grid md:grid-cols-3 gap-4">
           {techStack.map((tech) => (
-            <li className="flex flex-row items-center gap-2 bg-blue-300 text-black-900 px-3 py-2 rounded shadow-xl">
+            <li className="flex flex-row items-center gap-2 bg-secondary px-3 py-2 rounded shadow-xl">
               <img
                 src={tech.image ?? undefined}
                 alt={tech.title[lang]}
@@ -424,7 +460,7 @@ export default function Portfolio() {
         </ul>
       </section>
 
-      <footer className="text-center py-6 text-sm text-gray-600 bg-gradient-to-b from-gray-300 to-blue-300 w-full">
+      <footer className="text-center py-6 text-sm text-gray-600 bg-gradient-to-b from-secondary to-primary w-full">
         <div className="flex justify-center gap-6 mb-2 p-5">
           <a
             href="https://www.facebook.com/profile.php?id=100008568406391"
@@ -457,8 +493,8 @@ export default function Portfolio() {
             <img src="/images/mail-logo.png" alt="Email" className="w-6 h-6" />
           </a>
         </div>
-        <p>© {new Date().getFullYear()} Sebastián Babnič</p>
+        <p className="text-text-secondary">© {new Date().getFullYear()} Sebastián Babnič</p>
       </footer>
-    </div>
+    </div >
   );
 }
