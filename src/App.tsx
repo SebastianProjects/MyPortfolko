@@ -8,13 +8,13 @@ const projects = [
       sk: "Aplikácia pre simulácia procesov stolárskej firmy"
     },
     description: {
-      en: "This application simulates the order processing workflow in a joinery company, where various technological steps are performed by different types of workers. The simulation is implemented in Java using the ABAsim library. It produces all necessary statistics and includes an animation that visually represents each process.",
-      sk: "Táto aplikácia simuluje spracovanie objednávok v stolárskej firme, kde jednotlivé technologické kroky vykonávajú rôzne typy pracovníkov. Simulácia je implementovaná v jazyku Java s použitím knižnice ABAsim. Vytvára všetky potrebné štatistiky a obsahuje animáciu, ktorá vizuálne zobrazuje jednotlivé procesy."
+      en: "This application simulates the order processing workflow in a joinery company. The simulation is implemented in Java using the ABAsim library. It produces all necessary statistics and includes an animation that visually represents each process.",
+      sk: "Táto aplikácia simuluje spracovanie objednávok v stolárskej firme. Simulácia je implementovaná v jazyku Java s použitím knižnice ABAsim. Vytvára všetky potrebné štatistiky a obsahuje animáciu, ktorá vizuálne zobrazuje jednotlivé procesy."
     },
     image: "/images/simulation.png",
     badges: {
-      sk: [],
-      en: []
+      sk: ["Java", "Threads", "Simulácia", "Agent"],
+      en: ["Java", "Threads", "Simulation", "Agent"]
     }
   },
   {
@@ -23,13 +23,13 @@ const projects = [
       sk: "Aplikácia pre optimalizáciu umiestnenia bezpilotných monitorovacích systémov"
     },
     description: {
-      en: "As part of my bachelor thesis, I developed a Python application with a Tkinter GUI that uses OpenStreetMap (via TkinterMapView) to define areas and calculate optimal UAV placements. It also generates schedules using discrete simulation.",
-      sk: "V rámci bakalárskej práce som vyvinul aplikáciu v Pythone s grafickým rozhraním Tkinter, ktorá využíva OpenStreetMap (cez TkinterMapView) na definovanie oblastí a výpočet optimálneho umiestnenia UAV. Pomocou diskrétnej simulácie generuje rozvrhy."
+      en: "As part of my bachelor thesis, I developed an application in Python that uses OpenStreetMap (via TkinterMapView) to define areas and calculate optimal UAV placements. It also generates schedules using discrete simulation.",
+      sk: "V rámci bakalárskej práce som vyvinul aplikáciu v Pythone, ktorá využíva OpenStreetMap (cez TkinterMapView) na definovanie oblastí a výpočet optimálneho umiestnenia UAV. Pomocou diskrétnej simulácie generuje rozvrhy."
     },
     image: "/images/uav-picture.png",
     badges: {
-      sk: [],
-      en: []
+      sk: ["Python", "Tkinter", "TkinterMapView", "OpenStreetMap", "UAV"],
+      en: ["Python", "Tkinter", "TkinterMapView", "OpenStreetMap", "UAV"]
     }
   },
   {
@@ -38,13 +38,13 @@ const projects = [
       sk: "Aplikácia pre správu geografických oblastí s implementáciou KD-stromu"
     },
     description: {
-      en: "The application enables efficient insertion, searching, and deletion of geographical areas. A custom KD-tree structure with support for duplicate coordinates was implemented in Python to ensure optimal performance. The application also includes map-based visualization of searched areas.",
-      sk: "Aplikácia umožňuje efektívne vkladanie, vyhľadávanie a mazanie geografických oblastí. Aplikácia je implementovaná v jazyku Python a pre optimalizáciu operácií je implementovaný vlastný KD-strom s podporou duplicít. Súčasťou aplikácie je aj zobrazovanie vyhľadávaných oblastí prostredníctvom mapy."
+      en: "The application enables efficient insertion, searching, and deletion of geographical areas with simple map GUI. A custom KD-tree structure with support for duplicate coordinates was implemented in Python to ensure optimal performance.",
+      sk: "Aplikácia umožňuje efektívne vkladanie, vyhľadávanie a mazanie geografických oblastí s jednoduchým GUI s mapou. Aplikácia je implementovaná v jazyku Python a pre optimalizáciu operácií je implementovaný vlastný KD-strom s podporou duplicít."
     },
     image: "/images/geoapp.png",
     badges: {
-      sk: [],
-      en: []
+      sk: ["Python", "KD-tree", "Tkinter", "TkinterMapView"],
+      en: ["Python", "KD-tree", "Tkinter", "TkinterMapView"]
     }
   },
   {
@@ -53,13 +53,13 @@ const projects = [
       sk: "Aplikácia pre registráciu vozidiel a ich majiteľov s použitím vlastnej databázy"
     },
     description: {
-      en: "This application, implemented in Python, enables the registration and management of vehicles and their owners using a custom-built database system and simple GUI. It implements a heap file and an extendible hash file structure for efficient data storage and retrieval.",
-      sk: "Táto aplikácia, implementovaná v Pythone, umožňuje registráciu a správu vozidiel a ich majiteľov s využitím vlastného implementovaného databázového systému a jednoduchého GUI. Využíva dátové štruktúry heap file a extendible hash file na efektívne ukladanie a vyhľadávanie údajov."
+      en: "This application, implemented in Python, enables the registration and management of vehicles and their owners using a custom-built database system and simple GUI.",
+      sk: "Táto aplikácia, implementovaná v Pythone, umožňuje registráciu a správu vozidiel a ich majiteľov s využitím vlastného implementovaného databázového systému a jednoduchého GUI."
     },
     image: "/images/hf.png",
     badges: {
-      sk: [],
-      en: []
+      sk: ["Python", "Heap file", "Extendible Hash file", "Tkinter"],
+      en: ["Python", "Heap file", "Extendible Hash file", "Tkinter"]
     }
   },
   {
@@ -73,8 +73,8 @@ const projects = [
     },
     image: null,
     badges: {
-      sk: [],
-      en: []
+      sk: ["NodeJS", "MongoDB", "JWT", "Refresh token"],
+      en: ["NodeJS", "MongoDB", "JWT", "Refresh token"]
     }
   },
   {
@@ -83,13 +83,13 @@ const projects = [
       sk: "SHARE webová aplikácia"
     },
     description: {
-      en: "Fullstack web application implemented using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics. The application features a registration and login system with JWT-based authentication and password hashing.",
-      sk: "Fullstack webová aplikácia vyvíjaná pomocou React, Express a Oracle SQL databázy, ktorá umožňuje používateľom pridávať, komentovať, lajkovať, filtrovať príspevky a zobrazovať štatistiky. Aplikácia obsahuje systém registrácie a prihlasovania s autentifikáciou založenou na JWT spolu a hešovaním hesiel."
+      en: "Fullstack web application implemented using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics.",
+      sk: "Fullstack webová aplikácia vyvíjaná pomocou React, Express a Oracle SQL databázy, ktorá umožňuje používateľom pridávať, komentovať, lajkovať, filtrovať príspevky a zobrazovať štatistiky."
     },
     image: "/images/share.png",
     badges: {
-      sk: [],
-      en: []
+      sk: ["NodeJS", "Oracle SQL", "React", "JWT", "Refresh token"],
+      en: ["NodeJS", "Oracle SQL", "React", "JWT", "Refresh token"]
     }
   },
   {
@@ -103,8 +103,8 @@ const projects = [
     },
     image: "images/weblience.png",
     badges: {
-      sk: [],
-      en: []
+      sk: ["React", "Animácie"],
+      en: ["React", "Animations"]
     }
   },
   {
@@ -118,8 +118,8 @@ const projects = [
     },
     image: "images/AIGenProduct.png",
     badges: {
-      sk: [],
-      en: []
+      sk: ["Python", "WooCommerce", "AI", "Threads"],
+      en: ["Python", "WooCommerce", "AI", "Threads"]
     }
   },
   {
@@ -133,8 +133,8 @@ const projects = [
     },
     image: null,
     badges: {
-      sk: [],
-      en: []
+      sk: ["Python", "Spotify", "Threads"],
+      en: ["Python", "Spotify", "Threads"]
     }
   },
   {
@@ -148,8 +148,8 @@ const projects = [
     },
     image: "images/metronome-picture.png",
     badges: {
-      sk: [],
-      en: []
+      sk: ["Python", "Gitara", "Threads"],
+      en: ["Python", "Guitar", "Threads"]
     }
   }
 ];
@@ -385,7 +385,7 @@ export default function Portfolio() {
         <h2 className="text-3xl md:text-5xl mt-6 mb-2 font-semibold text-text-primary">{lang === 'en' ? 'Hi, I\'m Sebastián' : 'Ahoj, som Sebastián'}</h2>
         <p className="max-w-xl text-xl mx-auto mt-2 text-text-secondary">
           {lang === 'en'
-            ? 'passionate web developer focused on building efficient and scalable solutions.'
+            ? 'passionate web and desktop developer focused on building efficient and scalable solutions.'
             : 'developer webových a desktopových aplikácií zameraný na efektívne a škálovateľné riešenia.'}
         </p>
         <div className="absolute bottom-[-128px] left-0 w-full h-32 bg-gradient-to-b from-primary to-secondary pointer-events-none z-10" />
@@ -418,11 +418,11 @@ export default function Portfolio() {
                 key={i}
                 className="flex flex-col h-full p-5 md:p-20 items-center justify-center bg-secondary text-text-primary"
                 data-carousel-item>
-                <div className="flex flex-col xl:flex-row gap-5 ">
+                <div className="flex flex-col xl:flex-row gap-5">
                   <div className="flex flex-col">
                     <h4 className="text-xl md:text-2xl font-semibold text-center mb-5">{project.title[lang]}</h4>
                     {project.badges[lang] && (
-                      <div className="flex flex-row flex-wrap gap-1">
+                      <div className="flex flex-row flex-wrap gap-1 pb-5 justify-center">
                         {project.badges[lang]?.map((badge, i) => (
                           <Badge key={i} color="info" size="sm">{badge}</Badge>
                         ))}
@@ -436,7 +436,7 @@ export default function Portfolio() {
                     <img
                       src={project.image ?? undefined}
                       alt={project.title[lang]}
-                      className="xl:max-h-[400px] md:max-h-[300px] rounded object-contain xl:object-contain shadow-md shadow-black "
+                      className="xl:max-h-[300px] md:max-h-[280px] rounded object-contain xl:object-contain shadow-md shadow-black "
                     />
                   )}
                 </div>
