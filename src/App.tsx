@@ -375,13 +375,19 @@ export default function Portfolio() {
             src={lang === 'en' ? "/images/flags/flag_sk.webp" : "/images/flags/flag_uk.webp"}
             alt={lang === 'en' ? 'Slovak Flag' : 'US Flag'}
             className="w-[20px] min-w-[20px] min-h-[20px] jhover:scale-105 transition-transform"
+            loading="lazy"
           />
         </button>
       </header>
 
 
       <section id="intro" className="p-6 mt-8px min-h-screen text-center bg-gradient-to-b from-secondary to-primary flex items-center justify-center flex-col">
-        <img src="/images/profile.webp" alt="My profile" className="mx-auto rounded-3xl w-48 h-48" />
+        <img
+          src="/images/profile.webp"
+          alt="My profile"
+          className="mx-auto rounded-3xl w-48 h-48"
+          loading="lazy"
+        />
         <h2 className="text-3xl md:text-5xl mt-6 mb-2 font-semibold text-text-primary">{lang === 'en' ? 'Hi, I\'m Sebastián' : 'Ahoj, som Sebastián'}</h2>
         <p className="max-w-xl text-xl mx-auto mt-2 text-text-secondary">
           {lang === 'en'
@@ -437,6 +443,7 @@ export default function Portfolio() {
                       src={project.image ?? undefined}
                       alt={project.title[lang]}
                       className="xl:max-h-[300px] md:max-h-[280px] rounded object-contain xl:object-contain shadow-md shadow-black "
+                      loading="lazy"
                     />
                   )}
                 </div>
@@ -455,6 +462,7 @@ export default function Portfolio() {
                 src={tech.image ?? undefined}
                 alt={tech.title[lang]}
                 className="w-6 h-6 object-contain"
+                loading="lazy"
               />
               <span className="text-center leading-relaxed font-bold text-text-secondary">{tech.title[lang]}</span>
             </li>
@@ -470,7 +478,7 @@ export default function Portfolio() {
             rel="noopener noreferrer"
             className="font-bold hover:scale-110 transition-transform"
           >
-            <img src="/images/facebook-logo.png" alt="GitHub" className="w-6 h-6" />
+            <img src="/images/tech/facebook-logo.webp" alt="GitHub" className="w-6 h-6" loading="lazy" />
           </a>
           <a
             href="https://github.com/SebastianProjects"
@@ -478,7 +486,7 @@ export default function Portfolio() {
             rel="noopener noreferrer"
             className="font-bold hover:scale-110 transition-transform"
           >
-            <img src="/images/github-logo.png" alt="GitHub" className="w-6 h-6" />
+            <img src="/images/tech/github-logo.webp" alt="GitHub" className="w-6 h-6" loading="lazy" />
           </a>
           <a
             href="https://www.linkedin.com/in/sebasti%C3%A1n-babni%C4%8D-b16aa9322"
@@ -486,13 +494,13 @@ export default function Portfolio() {
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
           >
-            <img src="/images/linkedin-logo.png" alt="LinkedIn" className="w-6 h-6" />
+            <img src="/images/tech/linkedin-logo.webp" alt="LinkedIn" className="w-6 h-6" loading="lazy" />
           </a>
           <a
             href="mailto:sebastian.babnic@gmail.com"
             className="hover:scale-110 transition-transform"
           >
-            <img src="/images/mail-logo.png" alt="Email" className="w-6 h-6" />
+            <img src="/images/tech/mail-logo.webp" alt="Email" className="w-6 h-6" loading="lazy" />
           </a>
         </div>
         <p className="text-text-secondary">© {new Date().getFullYear()} Sebastián Babnič</p>
