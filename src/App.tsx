@@ -19,8 +19,8 @@ const projects = [
   },
   {
     title: {
-      en: "Application for optimization placement of unmanned monitoring systems",
-      sk: "Aplikácia pre optimalizáciu umiestnenia bezpilotných monitorovacích systémov"
+      en: "Application for optimization placement of UAV systems",
+      sk: "Aplikácia pre optimalizáciu umiestnenia UAV systémov"
     },
     description: {
       en: "As part of my bachelor thesis, I developed an application in Python that uses OpenStreetMap (via TkinterMapView) to define areas and calculate optimal UAV placements. It also generates schedules using discrete simulation.",
