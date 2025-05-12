@@ -11,7 +11,7 @@ const projects = [
       en: "This application simulates the order processing workflow in a joinery company. The simulation is implemented in Java using the ABAsim library. It produces all necessary statistics and includes an animation that visually represents each process.",
       sk: "Táto aplikácia simuluje spracovanie objednávok v stolárskej firme. Simulácia je implementovaná v jazyku Java s použitím knižnice ABAsim. Vytvára všetky potrebné štatistiky a obsahuje animáciu, ktorá vizuálne zobrazuje jednotlivé procesy."
     },
-    image: "/images/simulation.png",
+    image: "/images/projects/simulation.webp",
     badges: {
       sk: ["Java", "Threads", "Simulácia", "Agent"],
       en: ["Java", "Threads", "Simulation", "Agent"]
@@ -26,7 +26,7 @@ const projects = [
       en: "As part of my bachelor thesis, I developed an application in Python that uses OpenStreetMap (via TkinterMapView) to define areas and calculate optimal UAV placements. It also generates schedules using discrete simulation.",
       sk: "V rámci bakalárskej práce som vyvinul aplikáciu v Pythone, ktorá využíva OpenStreetMap (cez TkinterMapView) na definovanie oblastí a výpočet optimálneho umiestnenia UAV. Pomocou diskrétnej simulácie generuje rozvrhy."
     },
-    image: "/images/uav-picture.png",
+    image: "/images/projects/uav-picture.webp",
     badges: {
       sk: ["Python", "Tkinter", "TkinterMapView", "OpenStreetMap", "UAV"],
       en: ["Python", "Tkinter", "TkinterMapView", "OpenStreetMap", "UAV"]
@@ -41,7 +41,7 @@ const projects = [
       en: "The application enables efficient insertion, searching, and deletion of geographical areas with simple map GUI. A custom KD-tree structure with support for duplicate coordinates was implemented in Python to ensure optimal performance.",
       sk: "Aplikácia umožňuje efektívne vkladanie, vyhľadávanie a mazanie geografických oblastí s jednoduchým GUI s mapou. Aplikácia je implementovaná v jazyku Python a pre optimalizáciu operácií je implementovaný vlastný KD-strom s podporou duplicít."
     },
-    image: "/images/geoapp.png",
+    image: "/images/projects/geoapp.webp",
     badges: {
       sk: ["Python", "KD-tree", "Tkinter", "TkinterMapView"],
       en: ["Python", "KD-tree", "Tkinter", "TkinterMapView"]
@@ -56,7 +56,7 @@ const projects = [
       en: "This application, implemented in Python, enables the registration and management of vehicles and their owners using a custom-built database system and simple GUI.",
       sk: "Táto aplikácia, implementovaná v Pythone, umožňuje registráciu a správu vozidiel a ich majiteľov s využitím vlastného implementovaného databázového systému a jednoduchého GUI."
     },
-    image: "/images/hf.png",
+    image: "/images/projects/hf.webp",
     badges: {
       sk: ["Python", "Heap file", "Extendible Hash file", "Tkinter"],
       en: ["Python", "Heap file", "Extendible Hash file", "Tkinter"]
@@ -86,7 +86,7 @@ const projects = [
       en: "Fullstack web application implemented using React, Express, and an Oracle SQL database that allows users to add, comment on, like, filter posts and show statistics.",
       sk: "Fullstack webová aplikácia vyvíjaná pomocou React, Express a Oracle SQL databázy, ktorá umožňuje používateľom pridávať, komentovať, lajkovať, filtrovať príspevky a zobrazovať štatistiky."
     },
-    image: "/images/share.png",
+    image: "/images/projects/share.webp",
     badges: {
       sk: ["NodeJS", "Oracle SQL", "React", "JWT", "Refresh token"],
       en: ["NodeJS", "Oracle SQL", "React", "JWT", "Refresh token"]
@@ -101,7 +101,7 @@ const projects = [
       en: "Together with my friends, we developed a simple web in React.js that represents a company for creating interactive websites.",
       sk: "S mojimi kamarátmi sme vyvinuli jednoduchý web v React.js, ktorý reprezentuje firmu pre tvorbu interaktívnych stránok."
     },
-    image: "images/weblience.png",
+    image: "images/projects/weblience.webp",
     badges: {
       sk: ["React", "Animácie"],
       en: ["React", "Animations"]
@@ -116,7 +116,7 @@ const projects = [
       en: "An application I developed for WooCommerce products in Python using threads. The application can load products along with generating information about the products using AI. The user can generate information about the products, locally modify it, and gradually upload the products back to WooCommerce.",
       sk: "Aplikácia, ktorú som vyvinul pre WooCommerce produkty v prostredí Python s použitím vlákien. Aplikácia dokáže načítať produkty spolu s generovaním informácií o produktoch pomocou AI. Používateľ môže generovať informácie o produktoch, lokálne ich upravovať a postupne nahrávať produkty späť na WooCommerce."
     },
-    image: "images/AIGenProduct.png",
+    image: "images/projects/AIGenProduct.webp",
     badges: {
       sk: ["Python", "WooCommerce", "AI", "Threads"],
       en: ["Python", "WooCommerce", "AI", "Threads"]
@@ -146,7 +146,7 @@ const projects = [
       en: "Simple metronome application implemented using the Tkinter library for intuiive GUI and threading in Python. This tool helps me maintain tempo and play with a consistent rhythm while practicing guitar.",
       sk: "Jednoduchá aplikácia metronómu implementovaná pomocou knižnice Tkinter pre intuitívne GUI a vlákien v Pythone. Implementoval som ju pretože hrávam na gitaru. Aplikácia mi pomáha udržiavať tempo a hrať s konzistentným rytmom pri cvičení na gitare."
     },
-    image: "images/metronome-picture.png",
+    image: "images/projects/metronome-picture.webp",
     badges: {
       sk: ["Python", "Gitara", "Threads"],
       en: ["Python", "Guitar", "Threads"]
@@ -160,147 +160,147 @@ const techStack = [
       en: "Python",
       sk: "Python"
     },
-    image: "images/python-logo.png"
+    image: "images/tech/python-logo.webp"
   },
   {
     title: {
       en: "Java",
       sk: "Java"
     },
-    image: "images/java-logo.png"
+    image: "images/tech/java-logo.webp"
   },
   {
     title: {
       en: "C++",
       sk: "C++"
     },
-    image: "images/c-logo.png"
+    image: "images/tech/c-logo.webp"
   },
   {
     title: {
       en: "Data structures and algorithms",
       sk: "Algoritmy a údajové štruktúry"
     },
-    image: "images/dsa-logo.svg"
+    image: "images/tech/dsa-logo.svg"
   },
   {
     title: {
       en: "Design patterns",
       sk: "Návrhové vzory"
     },
-    image: "images/dp-logo.png"
+    image: "images/tech/dp-logo.webp"
   },
   {
     title: {
       en: "UML and software design",
       sk: "UML a návrh softvéru"
     },
-    image: "images/uml-logo.png"
+    image: "images/tech/uml-logo.webp"
   },
   {
     title: {
       en: "SQL",
       sk: "SQL"
     },
-    image: "images/sql-logo.png"
+    image: "images/tech/sql-logo.webp"
   },
   {
     title: {
       en: "HTML",
       sk: "HTML"
     },
-    image: "images/html-logo.png"
+    image: "images/tech/html-logo.webp"
   },
   {
     title: {
       en: "CSS",
       sk: "CSS"
     },
-    image: "images/css-logo.png"
+    image: "images/tech/css-logo.webp"
   },
   {
     title: {
       en: "Tailwind CSS",
       sk: "Tailwind CSS"
     },
-    image: "images/tailwind-logo.png"
+    image: "images/tech/tailwind-logo.webp"
   },
   {
     title: {
       en: "PHP",
       sk: "PHP"
     },
-    image: "images/php-logo.png"
+    image: "images/tech/php-logo.webp"
   },
   {
     title: {
       en: "Javascript",
       sk: "Javascript"
     },
-    image: "images/javascript-logo.png"
+    image: "images/tech/javascript-logo.webp"
   },
   {
     title: {
       en: "Typescript",
       sk: "Typescript"
     },
-    image: "images/typescript-logo.webp"
+    image: "images/tech/typescript-logo.webp"
   },
   {
     title: {
       en: "ReactJS",
       sk: "ReactJS"
     },
-    image: "images/react-logo.svg"
+    image: "images/tech/react-logo.svg"
   },
   {
     title: {
       en: "NodeJS",
       sk: "NodeJS"
     },
-    image: "images/node-logo.png"
+    image: "images/tech/node-logo.webp"
   },
   {
     title: {
       en: "Angular",
       sk: "Angular"
     },
-    image: "images/angular-logo.png"
+    image: "images/tech/angular-logo.webp"
   },
   {
     title: {
       en: "Git",
       sk: "Git"
     },
-    image: "images/git-logo.png"
+    image: "images/tech/git-logo.webp"
   },
   {
     title: {
       en: "Linux",
       sk: "Linux"
     },
-    image: "images/linux-logo.png"
+    image: "images/tech/linux-logo.webp"
   },
   {
     title: {
       en: "Routing and switching in network",
       sk: "Smerovanie a prepínanie v sieti"
     },
-    image: "images/network-logo.png"
+    image: "images/tech/network-logo.webp"
   },
   {
     title: {
       en: "Network security",
       sk: "Bezpečnosť v sieti"
     },
-    image: "images/network-security-logo.png"
+    image: "images/tech/network-security-logo.webp"
   },
   {
     title: {
       en: "Microsoft office",
       sk: "Microsoft office"
     },
-    image: "images/microsoft-logo.png"
+    image: "images/tech/microsoft-logo.webp"
   },
 ];
 
@@ -372,7 +372,7 @@ export default function Portfolio() {
         </nav>
         <button onClick={toggleLang} className="px-1 py-1 rounded flex items-center self-end">
           <img
-            src={lang === 'en' ? "/images/flag_sk.png" : "/images/flag_uk.png"}
+            src={lang === 'en' ? "/images/flags/flag_sk.webp" : "/images/flags/flag_uk.webp"}
             alt={lang === 'en' ? 'Slovak Flag' : 'US Flag'}
             className="w-[20px] min-w-[20px] min-h-[20px] jhover:scale-105 transition-transform"
           />
@@ -381,7 +381,7 @@ export default function Portfolio() {
 
 
       <section id="intro" className="p-6 mt-8px min-h-screen text-center bg-gradient-to-b from-secondary to-primary flex items-center justify-center flex-col">
-        <img src="/images/profile.png" alt="My profile" className="mx-auto rounded-3xl w-48 h-48" />
+        <img src="/images/profile.webp" alt="My profile" className="mx-auto rounded-3xl w-48 h-48" />
         <h2 className="text-3xl md:text-5xl mt-6 mb-2 font-semibold text-text-primary">{lang === 'en' ? 'Hi, I\'m Sebastián' : 'Ahoj, som Sebastián'}</h2>
         <p className="max-w-xl text-xl mx-auto mt-2 text-text-secondary">
           {lang === 'en'
