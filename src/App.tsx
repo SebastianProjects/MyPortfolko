@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Carousel, Badge } from 'flowbite-react';
+import { Badge } from 'flowbite-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const projects = [
   {
@@ -113,8 +118,8 @@ const projects = [
       sk: "Aplikácia pre generovanie a spracovanie produktov"
     },
     description: {
-      en: "An application I developed for WooCommerce products in Python using threads. The application can load products along with generating information about the products using AI. The user can generate information about the products, locally modify it, and gradually upload the products back to WooCommerce.",
-      sk: "Aplikácia, ktorú som vyvinul pre WooCommerce produkty v prostredí Python s použitím vlákien. Aplikácia dokáže načítať produkty spolu s generovaním informácií o produktoch pomocou AI. Používateľ môže generovať informácie o produktoch, lokálne ich upravovať a postupne nahrávať produkty späť na WooCommerce."
+      en: "A Python application for WooCommerce that uses threads to load products and generate AI-driven product info. Users can edit details locally and upload updates gradually.",
+      sk: "Python aplikácia pre WooCommerce využívajúca vlákna na načítanie produktov a generovanie AI informácií. Používateľ môže upravovať dáta lokálne a postupne nahrávať zmeny."
     },
     image: "images/projects/AIGenProduct.webp",
     badges: {
@@ -398,7 +403,7 @@ export default function Portfolio() {
 
       <section id="about" className="p-6 min-h-screen mx-auto flex items-center justify-center flex-col">
         <h3 className="text-3xl md:text-5xl font-bold mb-4 text-text-primary">{lang === 'en' ? 'About Me' : 'O mne'}</h3>
-        <p className="max-w-4xl text-base leading-relaxed text-justify text-text-secondary">
+        <p className="max-w-4xl ml-6 mr-6 text-base leading-relaxed text-justify text-text-secondary">
           {lang === 'en'
             ? 'I am a graduate of a bachelor\'s degree in IT and I am currently continuing my studies at the master\'s level in the same field. I focus on developing web and desktop applications. I excel at problem-solving, have excellent time management skills, and I am always eager to learn new things. I enjoy exploring new technologies to continually improve myself.'
             : 'Som absolventom bakalárskeho štúdia v IT. Momentálne pokračujem v inžinierskom štúdiu v rovnakej oblasti. Venujem sa vývoju webových a desktopových aplikácií. Vynikám v riešení problémov, mám výborný time management a vždy sa snažím učiť nové veci, rád sa zoznamujem s novými technológiami, aby som sa mohol neustále zlepšovať.'}
@@ -410,43 +415,53 @@ export default function Portfolio() {
         className="p-6 min-h-screen flex flex-col bg-gradient-to-b from-primary to-secondary relative"
       >
         <div className="absolute top-[-128px] left-0 w-full h-32 bg-gradient-to-b from-secondary to-primary pointer-events-none z-10" />
-        <h3 className="text-3xl mb-12 md:text-5xl font-bold text-center text-text-primary">
+        <h3 className="text-3xl mb-6 mt-6 md:mt-0 md:mb-12 md:text-5xl font-bold text-center text-text-primary">
           {lang === 'en' ? 'My projects' : 'Moje projekty'}
         </h3>
 
-        <div className="h-[78vh] w-[80vw] mx-auto">
-          <Carousel slide={false} indicators={false} draggable={true} className="custom-carousel">
+        <div className="w-[80vw] mx-auto">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            pagination={{ clickable: true }}
+            spaceBetween={50}
+            slidesPerView={1}
+            className="custom-carousel h-full"
+            navigation={true}
+          >
             {projects.map((project, i) => (
-              <div
-                key={i}
-                className="flex flex-col h-full p-5 md:p-20 items-center justify-center bg-secondary text-text-primary"
-                data-carousel-item>
-                <div className="flex flex-col xl:flex-row gap-5">
-                  <div className="flex flex-col">
-                    <h4 className="text-xl md:text-2xl font-semibold text-center mb-5">{project.title[lang]}</h4>
-                    {project.badges[lang] && (
-                      <div className="flex flex-row flex-wrap gap-1 pb-5 justify-center">
-                        {project.badges[lang]?.map((badge, i) => (
-                          <Badge key={i} color="info" size="sm">{badge}</Badge>
-                        ))}
-                      </div>
+              <SwiperSlide key={i}>
+                <div className="flex flex-col h-full p-5 md:p-20 min-h-[82vh] max-h-[82vh] md:min-h-[76vh] md:max-h-[76vh] items-center justify-center bg-secondary text-text-primary">
+                  <div className="flex flex-col xl:flex-row gap-5">
+                    <div className="flex flex-col">
+                      <h4 className="text-xl md:text-2xl font-semibold text-center mb-5">
+                        {project.title[lang]}
+                      </h4>
+                      {project.badges[lang] && (
+                        <div className="flex flex-row flex-wrap gap-1 pb-5 justify-center">
+                          {project.badges[lang]?.map((badge, i) => (
+                            <Badge key={i} color="info" size="sm">
+                              {badge}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+                      <p className="text-base leading-relaxed text-justify text-text-secondary">
+                        {project.description[lang]}
+                      </p>
+                    </div>
+                    {project.image && (
+                      <img
+                        src={project.image ?? undefined}
+                        alt={project.title[lang]}
+                        className="xl:max-h-[45vh] md:max-h-[30vh] rounded object-contain xl:object-contain shadow-md shadow-black"
+                        loading="lazy"
+                      />
                     )}
-                    <p className="text-base leading-relaxed text-justify text-text-secondary">
-                      {project.description[lang]}
-                    </p>
                   </div>
-                  {project.image && (
-                    <img
-                      src={project.image ?? undefined}
-                      alt={project.title[lang]}
-                      className="xl:max-h-[300px] md:max-h-[280px] rounded object-contain xl:object-contain shadow-md shadow-black "
-                      loading="lazy"
-                    />
-                  )}
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </Carousel>
+          </Swiper>
         </div>
       </section>
 

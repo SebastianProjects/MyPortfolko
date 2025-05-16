@@ -21,49 +21,43 @@ html {
     scroll-behavior: smooth;
 }
 
-.custom-carousel button svg {
-    color: #FFFFFF;
+.swiper-pagination-bullet {
+  background-color: #FFFFFF;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px !important;
+  transition: background-color 0.3s;
 }
 
-.custom-carousel button span:hover {
-    background-color: #374151 !important;
+.swiper-pagination-bullet:hover {
+  background-color: #3B82F6 !important;
 }
 
-.custom-carousel [class*="absolute"][class*="space-x-3"]>button[aria-label^="Slide"] {
-    background-color: #FFFFFF;
-    background-color: color-mix(#FFFFFF,#374151,transparent)
+.swiper-pagination-bullet-active {
+  background-color: #3B82F6 !important;
 }
 
-.custom-carousel [class*="absolute"][class*="space-x-3"]>button[aria-label^="Slide"]:hover {
-    background-color: #374151;
+.swiper-button-next, .swiper-button-prev {
+    color :#FFFFFF !important;
+    transition: color 0.3s !important;
 }
 
-.custom-carousel button[aria-current="true"] {
-    background-color: #374151;
+.swiper-button-next {
+    margin-right: 10px !important;
 }
 
-.custom-carousel button svg {
-    color: #FFFFFF;
+.swiper-button-prev {
+    margin-left: 10px !important;
 }
 
-.custom-carousel button span {
-    box-shadow: none !important;
-    /* box-shadow: 0 0 0 4px #FFFFFF !important; */
-
-    outline: none;
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color :#3B82F6 !important;
 }
 
-.custom-carousel button span:hover {
-    background-color: #374151 !important;
-}
-
-@media (max-width: 768px) {
-
-    .custom-carousel button {
-        display: none !important;
-    }
-
-    .custom-carousel [class*="absolute"][class*="space-x-3"]>button[aria-label^="Slide"] {
-        display: block !important;
-    }
+@media (max-width: 770px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
 }
