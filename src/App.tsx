@@ -380,7 +380,6 @@ export default function Portfolio() {
         </button>
       </header>
 
-
       <section id="intro" className="p-6 mt-8px min-h-screen text-center bg-gradient-to-b from-secondary to-primary flex items-center justify-center flex-col">
         <img
           src="/images/profile.webp"
@@ -406,8 +405,6 @@ export default function Portfolio() {
         </p>
       </section>
 
-
-
       <section
         id="projects"
         className="p-6 min-h-screen flex flex-col bg-gradient-to-b from-primary to-secondary relative"
@@ -418,7 +415,7 @@ export default function Portfolio() {
         </h3>
 
         <div className="h-[78vh] w-[80vw] mx-auto">
-          <Carousel slide={false} indicators={false} className="custom-carousel">
+          <Carousel slide={false} indicators={false} draggable={true} className="custom-carousel">
             {projects.map((project, i) => (
               <div
                 key={i}
