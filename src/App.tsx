@@ -43,8 +43,8 @@ const projects = [
       sk: "Aplikácia pre správu geografických oblastí s implementáciou KD-stromu"
     },
     description: {
-      en: "The application enables efficient insertion, searching, and deletion of geographical areas with simple map GUI. A custom KD-tree structure with support for duplicate coordinates was implemented in Python to ensure optimal performance.",
-      sk: "Aplikácia umožňuje efektívne vkladanie, vyhľadávanie a mazanie geografických oblastí s jednoduchým GUI s mapou. Aplikácia je implementovaná v jazyku Python a pre optimalizáciu operácií je implementovaný vlastný KD-strom s podporou duplicít."
+      en: "The application enables efficient management of geographical areas with simple map GUI. A custom KD-tree structure with support for duplicate coordinates was implemented in Python.",
+      sk: "Aplikácia umožňuje efektívnu prácu s geografickými oblasťami, spolu s jednoduchým GUI s mapou. Aplikácia je implementovaná v jazyku Python a spolu s vlastným KD-strom s podporou duplicít."
     },
     image: "/images/projects/geoapp.webp",
     badges: {
@@ -430,10 +430,10 @@ export default function Portfolio() {
           >
             {projects.map((project, i) => (
               <SwiperSlide key={i}>
-                <div className="flex flex-col h-full p-5 md:p-20 min-h-[82vh] max-h-[82vh] md:min-h-[76vh] md:max-h-[76vh] items-center justify-center bg-secondary text-text-primary">
+                <div className="flex flex-col h-full p-5 md:p-20 min-h-[76vh] max-h-[76vh] items-center justify-center bg-secondary text-text-primary">
                   <div className="flex flex-col xl:flex-row gap-5">
                     <div className="flex flex-col">
-                      <h4 className="text-xl md:text-2xl font-semibold text-center mb-5">
+                      <h4 className="text-md md:text-2xl font-semibold text-center mb-5">
                         {project.title[lang]}
                       </h4>
                       {project.badges[lang] && (
@@ -445,7 +445,7 @@ export default function Portfolio() {
                           ))}
                         </div>
                       )}
-                      <p className="text-base leading-relaxed text-justify text-text-secondary">
+                      <p className="text-sm md:text-base leading-relaxed text-justify text-text-secondary">
                         {project.description[lang]}
                       </p>
                     </div>
